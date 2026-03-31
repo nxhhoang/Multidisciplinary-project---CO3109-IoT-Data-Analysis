@@ -1,0 +1,1 @@
+# Module detect bất thường (nhiệt độ/độ ẩm quá cao)
