@@ -9,9 +9,7 @@ const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 const host = config.adafruit_io.host;
 const topics = config.adafruit_io.topics;
 
-console.log("Đã tải cấu hình:", config);
-
-const startSubsriber = () => {
+const startSubscriber = () => {
     const options = {
         username: config.adafruit_io.username,
         password: config.adafruit_io.key
@@ -70,4 +68,4 @@ const startSubsriber = () => {
     });
 }
 
-module.exports = {startSubsriber};
+module.exports = {startSubscriber};
