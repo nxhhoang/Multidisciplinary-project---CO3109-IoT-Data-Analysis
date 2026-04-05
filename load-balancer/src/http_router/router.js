@@ -1,43 +1,40 @@
 const fs = require('fs')
-const config = JSON.parse(fs.readFileSync(
-    'config/upstream.conf', 'utf-8'
-))
-
-console.log(config)
-
-let host = config.backends.map((x) => String(x.host))
-let port = config.backends.map((x) => String(x.port))
+const path = require('path')
+const configPath = path.join(__dirname, '../../config/upstream.conf');
+const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
 let backends = config.backends;
 const PORT = config.http_port;
-
-console.log(host)
-console.log(port)
-
 let idx = 0;
 
 const http = require('http')
-const url = require('url');
+
 const server = http.createServer((req, res) => {
-    const parsedUrl = url.parse(req.url, true)
-    const pathName = parsedUrl.pathName
-    const query = parsedUrl.query;
+    let target = backends[idx]
+    idx = (idx + 1) % backends.length
 
-    res.writeHead(200, {'Content-Type': 'application/json'})
-    res.end(JSON.stringify({
-        pathName, 
-        query, 
-        fullUrl: req.url,
-        concu: 'concu'
-    }, null, 2))
+    const options = {
+        hostname: target.hostname,
+        port: target.port,
+        path: req.url,
+        method: req.method,
+        headers: req.headers
+    }
 
-    console.log(parsedUrl)
+    console.log(options)
+
+    const proxyReq = http.request(options, (proxyRes) => {
+        const {statusCode, headers} = proxyReq
+        res.writeHead(statusCode, headers)
+        proxyRes.pipe(res, {end: true})
+    })
+
+    proxyReq.on('error', (err) => {
+        res.statusCode = 502;
+        res.end('Bad Gateway')
+    })
+
+    req.pipe(proxyReq, {end: true})
 })
-
-server.timeout = 5000
-server.maxConnections = 100
-server.keepAliveTimeout = 5000
-
-console.log(PORT)
 
 server.listen(PORT, 'localhost', () => {
   console.log(`Server running at http://localhost:${PORT}/`);
