@@ -18,7 +18,7 @@ const options = {
 
 const mqtt_client = mqtt.connect(host, options)
 
-mqtt_client.on('connection', () => {
+mqtt_client.on('connect', () => {
     console.log('MQTT ok')
 
     topics.forEach(topic => {
@@ -48,17 +48,17 @@ mqtt_client.on('message', (topic, message) => {
     const port_options = {
         host: '127.0.0.1',
         port: config.http_port,
-        path: 'api/v1/internal/telemetry',
+        path: '/api/v1/internal/telemetry',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Content-Length': data.length
+            'Content-Length': Buffer.byteLength(data)
         }
     }
 
     const req = http.request(port_options, (res) => {
         if (res.statusCode === 200 || res.statusCode === 201) {
-            console.log(`[MQTT Subscriber] Đã chuyển tiếp dữ liệu ${sensorType} thành công.`);
+            console.log(`[MQTT Subscriber] Đã chuyển tiếp dữ liệu ${sensorName} thành công.`);
         }
     })
 
@@ -66,6 +66,6 @@ mqtt_client.on('message', (topic, message) => {
         console.error(`[MQTT Subscriber] Lỗi khi chuyển tiếp dữ liệu: ${e.message}`);
     });
 
-    res.write(data)
-    res.end()
+    req.write(data)
+    req.end()
 })
