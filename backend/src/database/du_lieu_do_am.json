@@ -1,0 +1,191 @@
+[
+  {
+    "id": "0G467PEQMQ64HDBDJS9W8CASTM",
+    "value": "43.6",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:43:08Z",
+    "created_epoch": 1773632588,
+    "expiration": "2026-04-15T03:43:08Z"
+  },
+  {
+    "id": "0G467PDHM2HZB2Q5Z4A048R7R1",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:43:04Z",
+    "created_epoch": 1773632584,
+    "expiration": "2026-04-15T03:43:04Z"
+  },
+  {
+    "id": "0G467PCWPP0BNTHD2Q8Z83ZCTP",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:43:02Z",
+    "created_epoch": 1773632582,
+    "expiration": "2026-04-15T03:43:02Z"
+  },
+  {
+    "id": "0G467PBNM4RP7H0QWS5S2Z0NM4",
+    "value": "42.8",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:42:58Z",
+    "created_epoch": 1773632578,
+    "expiration": "2026-04-15T03:42:58Z"
+  },
+  {
+    "id": "0G467PB2QZXR5KBC4H5WB4DCPE",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:42:56Z",
+    "created_epoch": 1773632576,
+    "expiration": "2026-04-15T03:42:56Z"
+  },
+  {
+    "id": "0G467PAHKXSMG62NX3Z5K8JA76",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:42:54Z",
+    "created_epoch": 1773632574,
+    "expiration": "2026-04-15T03:42:54Z"
+  },
+  {
+    "id": "0G467P99MJXK42EDH3MZD3CMRG",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:42:50Z",
+    "created_epoch": 1773632570,
+    "expiration": "2026-04-15T03:42:50Z"
+  },
+  {
+    "id": "0G467P8CKS5G8GM34VBEWCG9FC",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:42:47Z",
+    "created_epoch": 1773632567,
+    "expiration": "2026-04-15T03:42:47Z"
+  },
+  {
+    "id": "0G467P75Q6F8TC963JQA33GP58",
+    "value": "42.9",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:42:43Z",
+    "created_epoch": 1773632563,
+    "expiration": "2026-04-15T03:42:43Z"
+  },
+  {
+    "id": "0G46717DRC7YXC1NQ4KZ18XKCA",
+    "value": "44.1",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:06:02Z",
+    "created_epoch": 1773630362,
+    "expiration": "2026-04-15T03:06:02Z"
+  },
+  {
+    "id": "0G467161NCJGQ382PSKX2FT932",
+    "value": "44.1",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:05:57Z",
+    "created_epoch": 1773630357,
+    "expiration": "2026-04-15T03:05:57Z"
+  },
+  {
+    "id": "0G4670P6RNE4TV0XCPK2D8WCC5",
+    "value": "44.2",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:05:05Z",
+    "created_epoch": 1773630305,
+    "expiration": "2026-04-15T03:05:05Z"
+  },
+  {
+    "id": "0G466YGBPET9255NZH63ETGKBK",
+    "value": "44.5",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:01:16Z",
+    "created_epoch": 1773630076,
+    "expiration": "2026-04-15T03:01:16Z"
+  },
+  {
+    "id": "0G466YETPP2V51RPY2P2KKNSMM",
+    "value": "44.5",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:01:11Z",
+    "created_epoch": 1773630071,
+    "expiration": "2026-04-15T03:01:11Z"
+  },
+  {
+    "id": "0G466YD9QA9ZKXGPMP41AGYCJH",
+    "value": "44.5",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T03:01:06Z",
+    "created_epoch": 1773630066,
+    "expiration": "2026-04-15T03:01:06Z"
+  },
+  {
+    "id": "0G466XJYRY446FR6QBHGGEQX7T",
+    "value": "44.6",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-16T02:59:40Z",
+    "created_epoch": 1773629980,
+    "expiration": "2026-04-15T02:59:40Z"
+  },
+  {
+    "id": "0G466XJYRY446FR6QBHGGEQX7T_0",
+    "value": "44.6",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-17T02:59:40Z",
+    "created_epoch": 1773716380,
+    "expiration": "2026-04-16T02:59:40Z"
+  },
+  {
+    "id": "0G466XJYRY446FR6QBHGGEQX7T_1",
+    "value": "44.8",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-17T03:04:40Z",
+    "created_epoch": 1773716680,
+    "expiration": "2026-04-16T03:04:40Z"
+  },
+  {
+    "id": "0G466XJYRY446FR6QBHGGEQX7T_0",
+    "value": "44.6",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-17T02:59:40Z",
+    "created_epoch": 1773716380,
+    "expiration": "2026-04-16T02:59:40Z"
+  },
+  {
+    "id": "0G466XJYRY446FR6QBHGGEQX7T_1",
+    "value": "44.8",
+    "feed_id": 3328878,
+    "feed_key": "humid-test1",
+    "created_at": "2026-03-17T03:04:40Z",
+    "created_epoch": 1773716680,
+    "expiration": "2026-04-16T03:04:40Z"
+  },
+    {
+      "id": "0G466XJYRY446FR6QBHGGEQX7T_1",
+      "value": "76",
+      "feed_id": 3328878,
+      "feed_key": "humid-test1",
+      "created_at": "2026-03-17T03:04:40Z",
+      "created_epoch": 1773716680,
+      "expiration": "2026-04-16T03:04:40Z"
+    }
+]

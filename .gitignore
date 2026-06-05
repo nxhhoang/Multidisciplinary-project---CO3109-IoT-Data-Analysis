@@ -1,2 +1,6 @@
-test/
 load-balancer/node_modules/
+test/
+.github/
+test loadbalancer/
+backend/node_modules/
+frontend/node_modules/
