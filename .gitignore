@@ -4,3 +4,4 @@ test/
 test loadbalancer/
 backend/node_modules/
 frontend/node_modules/
+load-balancer/node_modules/

@@ -41,7 +41,7 @@ const startRouter = () => {
         req.pipe(proxyReq);
     });
 
-    server.listen(PORT, 'localhost', () => {
+    server.listen(PORT, '0.0.0.0', () => {
         console.log(`Load Balancer đang chạy tại http://localhost:${PORT}/`);
     });
 }

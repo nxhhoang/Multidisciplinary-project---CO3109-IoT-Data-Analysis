@@ -1,5 +1,7 @@
+version: '3.8' 
+
 services:
-  # Database
+  # 1. Database
   db:
     image: timescale/timescaledb:latest-pg16
     container_name: smart_agri_db
@@ -20,13 +22,15 @@ services:
       timeout: 5s
       retries: 10
 
-  # API Backend
+  # 2. API Backend
   backend:
     build: ./backend
     container_name: smart_agri_backend
     restart: unless-stopped
+    # Có thể bỏ ports "4000:4000" nếu chỉ muốn truy cập qua Load Balancer
+    # Tuy nhiên giữ lại để debug cũng không sao
     ports:
-      - "4000:4000"
+      - "4000:4000" 
     environment:
       - NODE_ENV=production
       - POSTGRES_HOST=db
@@ -34,27 +38,35 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-postgres}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
       - POSTGRES_DATABASE=${POSTGRES_DATABASE:-smart_agriculture}
-      # when add loadbalancer change this to url of load balancer
-      - ALLOWED_ORIGIN=http://localhost:8080
-      - USER_ADA=${USER_ADA}
-      - KEY_ADA=${KEY_ADA}
+      - ALLOWED_ORIGIN=http://localhost:8080 # Cho phép Frontend truy cập
     depends_on:
       db:
         condition: service_healthy
 
-  # Web Frontend
+  # 3. Load Balancer (MỚI THÊM)
+  load-balancer:
+    build: ./load-balancer
+    container_name: smart_agri_lb
+    restart: unless-stopped
+    ports:
+      # Expose cổng 3000 ra ngoài, map vào cổng 8080 bên trong container (theo upstream.conf)
+      - "3000:8080" 
+    depends_on:
+      - backend
+
+  # 4. Web Frontend
   frontend:
     build:
       context: ./frontend
       args:
-        # when add loadbalancer change this to url of load balancer
-        - VITE_API_URL=http://localhost:4000/api/v1
+        # Frontend gọi API thông qua cổng 3000 của Load Balancer
+        - VITE_API_URL=http://localhost:3000/api/v1
     container_name: smart_agri_frontend
     restart: unless-stopped
     ports:
       - "8080:80"
     depends_on:
-      - backend
+      - load-balancer
 
 volumes:
   timescaledb_data:
